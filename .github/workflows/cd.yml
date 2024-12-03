@@ -6,13 +6,10 @@ on:
 
 jobs:
   Deploy:
-<<<<<<< HEAD
-=======
     permissions:
       contents: 'read'
       id-token: 'write'
       
->>>>>>> feat: add CI/CD configuration for GCP deployment
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -20,12 +17,6 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v4
         with:
-<<<<<<< HEAD
-          go-version: '1.23.0'
-      
-      - name: Build Production
-        run: bash scripts/buildprod.sh
-=======
           go-version: '1.22.0'
       
       - name: Build Production
@@ -44,5 +35,4 @@ jobs:
 
       - name: Build and Push Docker image
         run: |
-          gcloud builds submit --tag us-central1-docker.pkg.dev/notely-443204/notely-ar-repo/notely:latest . 
->>>>>>> feat: add CI/CD configuration for GCP deployment
+          gcloud builds submit --tag us-central1-docker.pkg.dev/notely-443204/notely-ar-repo/notely:latest .
